@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1443703406 source:g:\tushar c--c++\evalpostfix\main.cpp
+	<iostream>
+	<ctype.h>
+	<math.h>
+
