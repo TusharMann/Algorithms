@@ -23,7 +23,7 @@ void add()
 	if(root==NULL)
 	{
 		root=ptr;
-		return;
+
 	}
 
 	else
@@ -51,6 +51,88 @@ void add()
 	}
 
 }
+
+
+node* findmin(node *current)
+{
+    while(current->lt!=NULL)
+        current=current->lt;
+
+    return current;
+
+}
+
+
+node* delnode(node *root,int key)
+{
+    if(root==NULL)
+        return root;
+    else if(key<root->info)
+        root->lt=delnode(root->lt,key);
+    else if(key>root->info)
+        root->rt=delnode(root->rt,key);
+
+    else
+    {
+        node *temp;
+
+        if(root->lt==NULL && root->rt==NULL)
+        {
+            delete(root);
+            return NULL;
+
+        }
+
+        else if(root->lt==NULL)
+        {
+            temp=root;
+            root=root->rt;
+            delete(temp);
+            return root;
+
+        }
+
+
+        else if(root->rt==NULL)
+        {
+            temp=root;
+            root=root->lt;
+            delete(temp);
+            return root;
+
+        }
+
+        else
+        {
+            temp=findmin(root->rt);
+            root->info=temp->info;
+            root->rt=delnode(root->rt,temp->info);
+            return root;
+
+        }
+    }
+
+    return root;
+
+
+}
+
+void del()
+{
+    int n;
+    cout<<"\nEnter the node that you want to delete ";
+    cin>>n;
+
+    root=delnode(root,n);
+    cout<<"\nNode deleted successfully ";
+
+
+
+}
+
+
+
+
 
 void inorder(node *ptr)
 {
@@ -93,13 +175,16 @@ void postorder(node *ptr)
 int main(int argc, char *argv[])
 {
 	int i;
+
+		cout<<"\n1.Add new node in BST ";
+		cout<<"\n2.Delete a node in BST ";
+		cout<<"\n3.Preorder ";
+		cout<<"\n4.Inorder ";
+		cout<<"\n5.Postorder ";
+		cout<<"\n0.Exit";
+
 	do
 	{
-		cout<<"\n1.Add new node in BST ";
-		cout<<"\n2.Preorder ";
-		cout<<"\n3.Inorder ";
-		cout<<"\n4.Postorder ";
-		cout<<"\n0.Exit";
 		cout<<"\nEnter your choice ";
 		cin>>i;
 
@@ -108,13 +193,16 @@ int main(int argc, char *argv[])
 			case 1:add();
 				break;
 
-			case 2:preorder(root);
+            case 2:del();
+                    break;
+
+			case 3:preorder(root);
 				break;
 
-			case 3:inorder(root);
+			case 4:inorder(root);
 				break;
 
-			case 4:postorder(root);
+			case 5:postorder(root);
 				break;
 
 			case 0:break;
