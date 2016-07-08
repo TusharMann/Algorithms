@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1460296879 source:g:\tushar c--c++\fcfs\main.cpp
+	<iostream>
+	<algorithm>
+
