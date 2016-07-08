@@ -6,22 +6,25 @@ using namespace std;
 struct node
 {
     int info;
-    struct node *next;
+    node *next;
 
 };
- struct node *front;
- struct node *rear;
+ node *font=NULL;
+ node *rear=NULL;
 
-void push()
+void push(int n)
 {
-    struct node *ptr;
-    ptr=(struct node *)malloc(sizeof(struct node));
-    printf("\nEnter info ");
-    scanf("%d",&ptr->info);
-
-    if(front==NULL)
+    int i=0;
+    while(i<n)
     {
-        front=ptr;
+    node *ptr;
+    ptr=new node;
+    cout<<"\nEnter info ";
+    cin>>ptr->info;
+
+    if(font==NULL)
+    {
+        font=ptr;
         rear=ptr;
         ptr->next=NULL;
     }
@@ -32,12 +35,55 @@ void push()
         ptr->next=NULL;
         rear=ptr;
     }
-    printf("\nOne record Added ");
+    i++;
+}
+}
+
+int palindrome()
+{
+    node *ptr,*pre,*temp;
+    int i=1;
+
+    for(ptr=font,temp=rear,pre=rear;ptr!=pre && ptr!=NULL;temp=pre)
+    {
+        if(ptr->info == temp->info)
+        {
+            i=1;
+            for(pre=font;pre->next!=temp;pre=pre->next);
+
+            ptr=ptr->next;
+
+        }
+
+        else{
+            i=0 ;
+            return i;
+        }
+    }
+
+    return i;
 }
 
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    int n;
+
+    cout << "Enter the number of nodes that you want to enter" << endl;
+    cin>>n;
+    push(n);
+
+    int j=palindrome();
+    if(j==1)
+    {
+        cout<<"Palindrome list ";
+    }
+
+    else{
+        cout<<"Not a palindrome list";
+    }
+
+
+
     return 0;
 }
