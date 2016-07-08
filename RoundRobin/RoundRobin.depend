@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1459702204 source:g:\tushar c--c++\roundrobin\main.cpp
+	<iostream>
+	<algorithm>
+
