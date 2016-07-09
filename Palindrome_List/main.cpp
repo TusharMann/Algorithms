@@ -19,7 +19,7 @@ void push(int n)
     {
     node *ptr;
     ptr=new node;
-    //cout<<"\nEnter info ";
+    cout<<"\nEnter info ";
     cin>>ptr->info;
 
     if(font==NULL)
@@ -69,19 +69,19 @@ int main()
 {
     int n;
 
-    //cout << "Enter the number of nodes that you want to enter" << endl;
+    cout << "Enter the number of nodes that you want to enter" << endl;
     cin>>n;
     push(n);
 
     int j=palindrome();
     if(j==1)
     {
-        //cout<<"Palindrome list ";
+        cout<<"Palindrome list ";
         return 1;
     }
 
     else{
-        //cout<<"Not a palindrome list";
+        cout<<"Not a palindrome list";
         return 0;
     }
 
