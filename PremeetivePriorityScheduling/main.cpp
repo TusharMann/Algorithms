@@ -15,7 +15,7 @@ int main()
     scanf("%d",&pt[i]);
     rt[i]=bt[i];
   }
-/*
+
   pt[9]=11;
   printf("\n\nProcess\t|Turnaround time|waiting time\n");
   for(time=0;remain!=0;time++)
@@ -41,4 +41,4 @@ int main()
   printf("Avg turnaround time = %f",sum_turnaround*1.0/n);
   return 0;
 }
-*/
+
