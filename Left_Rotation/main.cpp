@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int n,k,i,j,temp;
-    int arr[1000];
+    int arr[100000];
     cin>>n>>k;
 
     for(i=0;i<n;i++)
@@ -13,16 +13,21 @@ int main()
         cin>>arr[i];
     }
 
-    for(j=0;j<k;j++)
+    for(j=0,i=0;j<k;i++)
     {
-        temp=arr[0];
-
-        for(i=0;i<n-1;i++)
+        if(i==n-1)
         {
-            arr[i]=arr[i+1];
+            j++;
+            i=-1;
+            arr[n-1]=temp;
         }
 
-        arr[n-1]=temp;
+        if(i==0)
+        {
+            temp=arr[i];
+        }
+
+        arr[i]=arr[i+1];
 
     }
 
