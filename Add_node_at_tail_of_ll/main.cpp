@@ -24,7 +24,7 @@ struct Node
 
      else{
         Node *temp;
-        for(temp=head;temp->info!=NULL;temp=temp->next);
+        for(temp=head;temp->next!=NULL;temp=temp->next);
 
         temp->next=ptr;
 
@@ -38,6 +38,15 @@ struct Node
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    head=Insert(head,8);
+    head=Insert(head,5);
+    head=Insert(head,2);
+    head=Insert(head,6);
+    head=Insert(head,1);
+
+    Node *ptr;
+    for(ptr=head;ptr!=NULL;ptr=ptr->next)
+        cout<<ptr->info<<" ";
+
     return 0;
 }
