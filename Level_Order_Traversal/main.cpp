@@ -1,5 +1,7 @@
 #include <iostream>
+#include<queue>
 
+using namespace std;
 
 struct node
 {
@@ -57,8 +59,8 @@ void inorder(node *ptr)
 	if(ptr!=NULL)
 	{
 		inorder(ptr->left);
-		cout<<ptr->data);
-		inorder(ptr->rightt);
+		cout<<ptr->data;
+		inorder(ptr->right);
 
 	}
 
@@ -68,7 +70,7 @@ void preorder(struct node *ptr)
 {
 	if(ptr!=NULL)
 	{
-		cout<<ptr->info;
+		cout<<ptr->data;
 		preorder(ptr->left);
 		preorder(ptr->right);
 
@@ -82,11 +84,45 @@ void postorder(struct node *ptr)
 	{
 		postorder(ptr->left);
 		postorder(ptr->right);
-		printf("\t%d",ptr->info);
+        cout<<"\t"<<ptr->data;
 	}
 
 }
 
+void LevelOrder(node *root)
+{
+    queue<node *> q;
+
+    if(root==NULL)
+        return;
+
+    else{
+
+    cout<<root->data<<" ";
+
+    if(root->left!=NULL)
+        q.push(root->left);
+
+    if(root->right!=NULL)
+        q.push(root->right);
+
+    while(!q.empty())
+    {
+        node *ptr=q.front();
+        cout<<ptr->data<<" ";
+        q.pop();
+
+    if(ptr->left!=NULL)
+        q.push(ptr->left);
+
+    if(ptr->right!=NULL)
+        q.push(ptr->right);
+
+    }
+
+  }
+
+}
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -98,6 +134,7 @@ int main(int argc, char *argv[])
         cout<<"\n2.Preorder ";
 		cout<<"\n3.Inorder ";
 		cout<<"\n4.Postorder ";
+		cout<<"\n5.Level Order Traversal";
 		cout<<"\n0.Exit";
 
 	do
@@ -118,6 +155,9 @@ int main(int argc, char *argv[])
 
 			case 4:postorder(root);
 				break;
+
+            case 5:LevelOrder(root);
+                break;
 
 			case 0:break;
 			default:cout<<"\nEnter valid choice ";
