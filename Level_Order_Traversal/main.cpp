@@ -59,7 +59,7 @@ void inorder(node *ptr)
 	if(ptr!=NULL)
 	{
 		inorder(ptr->left);
-		cout<<ptr->data;
+		cout<<"\t"<<ptr->data;
 		inorder(ptr->right);
 
 	}
@@ -70,7 +70,7 @@ void preorder(struct node *ptr)
 {
 	if(ptr!=NULL)
 	{
-		cout<<ptr->data;
+		cout<<"\t"<<ptr->data;
 		preorder(ptr->left);
 		preorder(ptr->right);
 
