@@ -131,23 +131,16 @@ void Inorder_without_recursion(node *root)
 
   stack<node *>s;
   node *current;
-  int n=0;
+  bool done=true;
   if(root==NULL)
         return;
 
   s.push(root);
   current=root->left;
+  cout<<"\n";
 
-  while(n<2)
+  while(done)
   {
-      if(s.empty())
-      {
-         n++;
-         if(n==2)
-            break;
-      }
-
-
       while(current!=NULL)
       {
           s.push(current);
@@ -155,10 +148,16 @@ void Inorder_without_recursion(node *root)
 
       }
 
-      current=s.top();
-      s.pop();
-      cout<<current->data<<" ";
-      current=current->right;
+       if(!s.empty())
+       {
+        current=s.top();
+        s.pop();
+        cout<<"\t"<<current->data;
+        current=current->right;
+        }
+
+        else
+            done=false;
 
   }
 }
