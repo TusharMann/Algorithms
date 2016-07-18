@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1468873238 source:g:\tushar c--c++\algorithms\inorder_without_recursion\main.cpp
+	<iostream>
+	<queue>
+	<stack>
+
