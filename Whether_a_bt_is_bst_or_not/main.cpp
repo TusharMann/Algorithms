@@ -2,6 +2,8 @@
 #include<queue>
 
 using namespace std;
+int arr[20];
+int n=-1;
 
 struct node
 {
@@ -54,42 +56,32 @@ void add()
 
 }
 
-bool isbst(node *root)
+void inorder(node *root)
 {
-    queue<node *> q;
-    if(root==NULL)
-        return true;
-
-    if((root->left!=NULL&&root->left->data > root->data) || (root->right!=NULL&&root->right->data < root->data))
-        return false;
-
-    else{
-        if(root->left!=NULL)
-            q.push(root->left);
-
-        if(root->right!=NULL)
-            q.push(root->right);
-
-        while(!q.empty())
-        {
-           node *ptr;
-           ptr=q.front();
-           q.pop();
-
-           if(ptr->left->data > ptr->data || ptr->right->data < ptr->data)
-                return false;
-
-            if(ptr->left!=NULL)
-            q.push(ptr->left);
-
-            if(ptr->right!=NULL)
-            q.push(ptr->right);
-       }
-
-
+    if(root)
+    {
+        inorder(root->left);
+        arr[++n]=root->data;
+        inorder(root->right);
 
     }
 
+}
+
+bool isbst(node *root)
+{
+    if(root==NULL)
+        return true;
+
+    inorder(root);
+
+    int i;
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]>arr[i+1])
+            return false;
+
+    }
 
     return true;
 
