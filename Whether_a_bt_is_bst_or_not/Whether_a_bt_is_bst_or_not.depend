@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1469000706 source:g:\tushar c--c++\algorithms\whether_a_bt_is_bst_or_not\main.cpp
+	<iostream>
+	<queue>
+
