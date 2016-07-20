@@ -88,7 +88,15 @@ bool isbst(node *root)
 
 
 }
+node* newNode(int data)
+{
+  node *ptr = new node;
+  ptr->data = data;
+  ptr->left = NULL;
+  ptr->right = NULL;
 
+  return(ptr);
+}
 
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
@@ -99,7 +107,8 @@ int main(int argc, char *argv[])
 		 bool val;
 
 		cout<<"\n1.Add new node in BST ";
-		cout<<"\n2.Check if bst or not ";
+		cout<<"\n2.Add nodes in binary tree ";
+		cout<<"\n3.Check if bst or not ";
         cout<<"\n0.Exit";
 
 	do
@@ -113,6 +122,15 @@ int main(int argc, char *argv[])
 				break;
 
             case 2:
+                root = newNode(4);
+                root->left        = newNode(2);
+                root->right       = newNode(5);
+                root->left->left  = newNode(1);
+                root->left->right = newNode(3);
+
+                break;
+
+            case 3:
                 val=isbst(root);
                 if(val)
                     cout<<"\nThe given tree is bst ";
