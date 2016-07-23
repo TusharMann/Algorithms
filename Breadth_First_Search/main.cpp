@@ -1,4 +1,5 @@
 #include <iostream>
+#include<list>
 
 using namespace std;
 
@@ -24,16 +25,16 @@ graph::graph(int v)
 
 void graph::addEdge(int v,int w)
 {
-    adj[v]=w;
+    adj[v].push_back(w);
 
 }
 
 void graph::BFS(int s)
 {
     bool *visited=new bool[v];
-    int i;
-    for(i=0;i<v;i++)
-        visited[i]=false;
+    int j;
+    for(j=0;j<v;j++)
+        visited[j]=false;
 
     list<int>::iterator i;
     list<int>queue;
@@ -43,7 +44,20 @@ void graph::BFS(int s)
 
     while(!queue.empty())
     {
+        s=queue.front();
+        cout<<s<<" ";
+        queue.pop_front();
 
+
+        for(i=adj[s].begin();i!=adj[s].end();i++)
+        {
+            if(!visited[*i])
+            {
+                visited[*i]=true;
+                queue.push_back(*i);
+            }
+
+        }
 
 
 
@@ -58,6 +72,17 @@ void graph::BFS(int s)
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    graph g(4);
+
+    g.addEdge(0,1);
+    g.addEdge(0,2);
+    g.addEdge(1,2);
+    g.addEdge(2,0);
+    g.addEdge(2,3);
+    g.addEdge(3,3);
+
+    cout<<"\n"<<"Breadth First Search of the given graph is ";
+    g.BFS(2);
+
     return 0;
 }
