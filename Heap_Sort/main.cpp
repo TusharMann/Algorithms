@@ -19,9 +19,9 @@ void max_heap(int arr[],int n)
 
     if(largest!=n)
     {
-        arr[n]=temp;
+        temp=arr[n];
         arr[n]=arr[largest];
-        arr[largest]=arr[n];
+        arr[largest]=temp;
 
         max_heap(arr,largest);
     }
@@ -51,10 +51,10 @@ int main()
 
     build_heap(arr,n);
 
-    for(i=n;i>1;i++)
+    for(i=n;i>1;i--)
     {
         int temp;
-        arr[1]=temp;
+        temp=arr[1];
         arr[1]=arr[i];
         arr[i]=temp;
 
