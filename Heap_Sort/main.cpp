@@ -47,5 +47,20 @@ int main()
         cin>>arr[i];
 
     build_heap(arr,n);
+
+    for(i=n;i>1;i++)
+    {
+        int temp;
+        arr[1]=temp;
+        arr[1]=arr[i];
+        arr[i]=temp;
+
+        hsize--;
+        max_heap(arr,1);
+
+
+    }
+
+
     return 0;
 }
