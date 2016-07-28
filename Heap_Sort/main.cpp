@@ -8,9 +8,23 @@ void max_heap(int arr[],int n)
 {
     int left=n*2;
     int right=(n*2)+1;
-    int largest;
+    int largest,temp;
 
-    if()
+    if(left<=hsize && arr[left]>arr[n])
+        largest=left;
+    else
+        largest=n;
+    if(right<=hsize && arr[right>arr[largest])
+        largest=right;
+
+    if(largest!=i)
+    {
+        arr[n]=temp;
+        arr[n]=arr[largest];
+        arr[largest]=arr[n];
+
+        max_heap(arr,largest);
+    }
 
 }
 
