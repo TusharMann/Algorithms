@@ -1,9 +1,9 @@
-#include <iostream>
-
+#include<iostream>
+#include<algorithm>
 using namespace std;
-
-int main()
+struct job
 {
-    cout << "Hello world!" << endl;
-    return 0;
-}
+int id;
+int art,brt,rt;
+int ct,tat,wt;
+};
