@@ -38,3 +38,23 @@ int main()
  for(time=0;remain!=n;time++)
  {
      smallest=9;
+ for(i=1;i<=n;i++)
+   {
+     if(j[i].art<=time && j[i].rt<j[smallest].rt && j[i].rt>0)
+        smallest=i;
+   }
+   j[smallest].rt--;
+
+   if(j[smallest].rt==0)
+   {
+       remain++;
+     tot=time+1;
+     j[smallest].ct=tot;
+     j[smallest].tat=j[smallest].ct-j[smallest].art;
+     j[smallest].wt=j[smallest].tat-j[smallest].brt;
+     turn+=j[smallest].tat;
+     wait+=j[smallest].wt;
+   }
+
+ }
+
