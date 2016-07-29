@@ -14,3 +14,19 @@ bool cmp(struct job x,struct job y)
 }
 int main()
 {
+ int n,i,smallest,remain=0,time;
+ float tot=0,wait=0,turn=0;
+ float avgtat,avgwt;
+ job j[10];
+ cout<<"\nEnter number of jobs:";
+ cin>>n;
+ for(i=1;i<=n;i++)
+ {
+  j[i].id=i;
+ cout<<"\nEnter arrival time of the process p"<<i<<" ";
+ cin>>j[i].art;
+ cout<<"\nEnter burst time of the process p"<<i<<" ";
+ cin>>j[i].brt;
+ j[i].rt=j[i].brt;
+
+ }
