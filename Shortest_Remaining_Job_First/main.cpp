@@ -58,3 +58,13 @@ int main()
 
  }
 
+
+ avgtat=turn/n;
+ avgwt=wait/n;
+
+ cout<<"\nAverage turn around time="<<avgtat;
+ cout<<"\nAverage waiting time="<<avgwt;
+
+
+  return 0;
+}

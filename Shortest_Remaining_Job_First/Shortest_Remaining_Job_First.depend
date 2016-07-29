@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1469816305 source:g:\tushar c--c++\algorithms\shortest_remaining_job_first\main.cpp
+	<iostream>
+	<algorithm>
+
