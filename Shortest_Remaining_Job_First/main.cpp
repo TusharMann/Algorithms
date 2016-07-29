@@ -30,3 +30,11 @@ int main()
  j[i].rt=j[i].brt;
 
  }
+ sort(j+1,j+n+1,cmp);
+
+ j[9].rt=9999;
+
+
+ for(time=0;remain!=n;time++)
+ {
+     smallest=9;
