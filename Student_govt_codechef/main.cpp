@@ -5,12 +5,15 @@ using namespace std;
 int main()
 {
    int t,k,n,p,i,j=0;
-   int arr[1000],brr[1000];
+   int *arr,*brr;
    cin>>t;
 
    for(p=0;p<t;p++)
    {
        cin>>n>>k;
+        j=0;
+       arr=new int[n];
+       brr=new int[n];
 
         for(i=1;i<=n;i++)
         {
