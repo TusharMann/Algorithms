@@ -5,8 +5,9 @@ using namespace std;
 int main()
 {
    int t,k,n,p,i,j=0;
-   int *arr,*brr;
+   int *arr,*brr,*crr;
    cin>>t;
+   crr=new int[t];
 
    for(p=0;p<t;p++)
    {
@@ -38,11 +39,15 @@ int main()
                 j++;
 
         }
+        crr[p]=j;
 
-        cout<<"\n"<<j;
+
 
 
    }
+
+   for(i=0;i<t;i++)
+    cout<<crr[i]<<"\n";
 
     return 0;
 }
