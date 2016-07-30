@@ -47,7 +47,7 @@ int main()
    }
 
    for(i=0;i<t;i++)
-    cout<<crr[i]<<"\n";
+    cout<<crr[i];
 
     return 0;
 }
