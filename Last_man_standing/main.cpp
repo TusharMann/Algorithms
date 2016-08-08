@@ -9,11 +9,8 @@ int main()
 
    while(t--)
    {
-      int *arr,*brr,i,n,m,j;
+      int arr[10000],brr[10000],i,n,m,j;
       cin>>n;
-
-      arr=new int[n];
-      brr=new int[n];
 
       for(i=1;i<=n;i++)
         arr[i]=brr[i]=i;
@@ -30,7 +27,12 @@ int main()
             m=m/2;
         }
 
-        cout<<brr[1];
+        for(i=1;i<=n;i++)
+        {
+            if(arr[i]==brr[1])
+                cout<<i;
+
+        }
 
 
 
