@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1471274005 source:g:\tushar c--c++\algorithms\max_in_a_tree\main.cpp
+	<iostream>
+	<queue>
+	<stack>
+
