@@ -10,6 +10,7 @@ int main()
    while(t--)
    {
       int arr[10000],brr[10000],i,n,m,j;
+      cout<<"\nEnter number of persons ";
       cin>>n;
 
       for(i=1;i<=n;i++)
